@@ -1,17 +1,22 @@
 
-#+TITLE:	Battle Snake 2019
+#+TITLE:	Battlesnake 2019
 #+AUTHOR:	Jaxson Van Doorn
 #+EMAIL:	jaxson.vandoorn@gmail.com
 #+OPTIONS:  num:nil
 
-* Battle Snake 2019
+* Battlesnake 2019
 
-@@html:<img height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/intermediate.png?raw=true" />@@
+@@html:<img height="120" width="120" src="screenshots/advanced.png" />@@
 
-A simple [[https://www.battlesnake.io][BattleSnake]] written in Java.
-Will be entered in the 2019 Intermediate competition as *Liquid Snake*.
+A simple [[https://www.battlesnake.io][Battlesnake]] written in Java.
 
-Deployed to =https://battlesnake-liquid.herokuapp.com/=
+Was entered in the expert divison of 2019's tournament as **🐍 ‏‏‎ 𝙎𝙐𝙋𝙀𝙍 𝙎𝙇𝙄𝙈𝙀𝙔 ‏‏‎ 🐍**.
+
+Deployed to [[https://battlesnake-liquid.herokuapp.com/][https://battlesnake-liquid.herokuapp.com/]]
+
+Battlesnake documentation can be found at https://docs.battlesnake.io.
+
+[[https://heroku.com/deploy][https://www.herokucdn.com/deploy/button.png]]
 
 ** Strategy
 
@@ -20,77 +25,123 @@ the largest on the board, or if the health was below a specific
 threshold, the snake would navigate towards the closest food. Otherwise,
 it would try to target the other snakes' heads to either eliminate the
 opponent in a head-on collision or trap them by cutting off their path.
-The snake also included an unused passive state, where she would try to
-loop back around to her tail to avoid collisions.
 
 *** Drawbacks
 
-The snake's biggest drawback was trapping itself in its own tail. We
-didn't implement an effective algorithm to calculate dangerous regions
-of the board, and ultimately the snake died by going for takedowns and
-boxing itself in.
+Despite efforts to improve the issue from 2018's entry, the snake's biggest
+drawback was trapping itself in its own tail. Wedidn't implement an effective
+algorithm to calculate dangerous regions of the board, and ultimately the
+snake died by going for a food point and boxing itself in.
 
 ** Battle History
 
-*Bounty Snakes:*
-- Beat two of [[https://www.bambora.com/en/ca/][Bambora]]'s bounty snakes
-- Beat [[https://www.rooof.com/][Rooof]]'s bounty snakes
-- Beat [[https://www.giftbit.com/][Giftbit]]'s bounty snakes
-- Beat [[https://github.com][GitHub]]'s two snakes in only 67 moves
-- Beat [[https://www.sendwithus.com/][Sendwithus]]' three bounty snakes
-- Beat [[https://semaphoresolutions.com/][Semaphore]]'s zombie snakes and hungry snake
-- Lost to one of [[https://www.bambora.com/en/ca/][Bambora]]'s bounty snakes
-- Lost to [[https://myaccio.com/][Accio]]'s defensive snake
-- Lost to [[http://www.appcolony.ca/][AppColony]]'s tron snake
-- Lost to [[https://rdbrck.com/][Redbrick]]'s champion snake
-- Lost to [[https://www.workday.com/][Workday]]'s bounty snake
-- Lost to [[https://www.checkfront.com/][CheckFront]]'s two bounty snakes
+*Bounty Snakes*
 
-*Tournament:*
+- Beat all 3 of [[https://www.bambora.com/en/ca/][Bambora]]'s bounty snakes
+- Beat all 3 of [[https://freshworks.io/][Freshworks]]' bounty snake levels
+- Beat both of [[https://semaphoresolutions.com/][Semaphore]]'s bounty snakes
+- Beat [[https://www.workday.com/][Workday]]'s bounty snake
+- Beat [[https://www.giftbit.com/][Giftbit]]'s 3v1 bounty snake match
+- Beat two of four of [[https://www.rooof.com/][Rooof]]'s bounty snakes
+- Beat one of two of [[https://rdbrck.com/][Redbrick]]'s bounty snakes
+- Beat both of [[https://www.pixelunion.net/][Pixel Union]]'s bounty snakes
+- Beat one of [[https://www.schneider-electric.ca/en/][Schneider Electric]]'s bounty snakes
+- Beat one of [[https://www.telmediq.com/][Telmediq]]'s bounty snakes
+- Made it to round 6 with [[https://www.sendwithus.com/][Sendwithus]]' zombie wave style bounty snakes
+- Lost to [[https://www.checkfront.com/][CheckFront]]'s bounty snake
+- Lost to [[https://github.com][GitHub]]'s bounty snake
 
-The snake came third in both our rounds of the battle. There were 57
-competitors in the intermediate tier.  Our games were played on a 15x15 board with 10 food.
+*Tournament*
 
-Timestamp on [[https://www.twitch.tv/videos/234961139][Sendwithus'
-Twitch stream]] is
-[[https://www.twitch.tv/videos/234961139?t=01h56m44s][1:56:44-1:58:24]].
+The snake came 3rd in the first round of battle, and came 2nd in the second round. There were 29
+competitors in the expert tier.  Our games were played on a 11x11 board with 5 food spawned at start.
 
-*[[https://clips.twitch.tv/SplendidNiceKoalaTwitchRPG][Game 1]]*
+Timestamp on the [[https://www.twitch.tv/videos/389395340][Battlesnake.io Twitch stream]] is [[https://www.twitch.tv/videos/389395340?t=02h52m53s][2:52:53-2:55:30]].
 
-*[[https://clips.twitch.tv/GentleCrispyReubenCorgiDerp][Game 2]]*
+*[[https://clips.twitch.tv/SoftDepressedWebDAESuppy][Game 1]]*
 
-** Screenshots
+*[[https://clips.twitch.tv/CoyRelentlessFiddleheadsSoBayed][Game 2]]*
 
-[[./screenshots/snake-0.png]] [[./screenshots/snake-1.png]]
-[[./screenshots/snake-2.png]] [[./screenshots/snake-3.png]]
+*Arena*
+
+At our highest ranking, shortly after the end of the tournament,
+our snake was listed at #11 of ~150 snakes in the *[[https://play.battlesnake.io/leaderboard/][Arena]]*.
+Overall our snake seemed to fluctuate in-between #15-#40.
+
+[[./screenshots/arena.png]]
+
+This ranking is likely somewhat in-accurate as many snakes were
+pulled out of the arena for the tournament in-order to minimize load.
+
+** Game Snippets
+
+[[./screenshots/snake-win-1.gif]] [[./screenshots/snake-win-2.gif]]
+[[./screenshots/snake-win-7.gif]] [[./screenshots/snake-win-6.gif]]
 
 ** Usage
 *** Prerequisites
-1. Install Heroku
-2. Install Tomcat (To Run Locally)
-3. Install Docker (To Run Test Server)
-4. Install .war Heroku deployment plug-in ~heroku plugins:install heroku-cli-deploy~
-5. Create a Heroku App ~heroku create <name>~
-*** Test Server
-1. Run ~docker run -it --rm -p 3000:3000 sendwithus/battlesnake-server~
-2. Goto ~localhost:3000~ in a browser.
+1. Install JDK 11 or higher
+2. Install Docker + Docker compose (required for [[sec:docker][Docker container method]])
+3. Install Heroku CLI (required for [[sec:heroku-cli][Heroku CLI method]])
+4. Install .war Heroku deployment plug-in ~heroku plugins:install heroku-cli-deploy~ ) (required for [[sec:heroku-cli][Heroku CLI method]])
+5. Create a Heroku App online or using the Heroku CLI with ~heroku create <name>~
+
+   (alternatively any other hosting service can be used)
+*** Test Board
+*Online*
+
+Goto [[https://play.battlesnake.io][play.battlesnake.io]]
 *** Run Locally
-1. Build .war file ~./gradlew build~
-2. Copy .war into ~$CATALINA_HOME/webapps~
-3. Start Tomcat using ~sudo service tomcat[version] start~
-4. Use ~http://[local-ip]:8080~ as snake URL.
+*Gradle*
+
+1. Run the project using either ~./gradle run~ or ~gradlew run~ for UNIX and Windows platforms respectively.  This will build and run the project as a `JAR` using [[https://github.com/jsimone/webapp-runner][Webapp Runner]].
+2. Use ~http://localhost:8080~ as the snake URL.
+
+*Docker*
+<<sec:docker>>
+
+1. Build the project using either ~./gradle build~ or ~gradlew build~ for UNIX and Windows platforms respectively.
+2. Run the Docker Tomcat image in a container with ~docker-compose up~.
+3. Use ~http://localhost:8080/battlesnake~ as the snake URL.
 *** Deployment
+
+*Heroku-GitHub Integration*
+
+1. Go the dashboard for the Heroku app.
+2. Click on the ~deploy~ tab.
+3. Scroll down to the ~Deployment method~ and select ~GitHub~.
+4. Enter the repository name and click ~Connect~.
+
+*Heroku CLI*
+<<sec:heroku-cli>>
+
 1. Build .war file ~./gradlew build~
-2. Deploy to Heroku ~heroku war:deploy build/libs/BattleSnake-[version].war --app <name>~
-3. Use ~https://[name].herokuapp.com/~ as snake URL.
+2. Deploy to Heroku ~heroku war:deploy build/libs/battlesnake.war --app <name>~
+3. Use ~https://[name].herokuapp.com/~ as the snake URL.
 ** Acknowledgments
 
--  *Built by* [[https://github.com/austinben][Ben Austin]],
-   [[https://github.com/woofers][Jaxson Van Doorn]], and
-   [[https://github.com/zakwht][Zak White]], March 3, 2018
--  *Template Forked from*
-   [[https://github.com/tflinz/BasicBattleSnake2018][here]]
--  *Designed for* [[https://github.com/sendwithus][Sendwithus]]'
-   BattleSnake competition, March 3, 2018
+-  *Built by* [[https://github.com/austinben][Ben Austin]] and [[https://github.com/woofers][Jaxson Van Doorn]]
+-  *Adapted from* [[https://github.com/tflinz/BasicBattleSnake2018][tflinz's snake]]
+-  *Designed for* [[https://github.com/battlesnakeio][Battlesnake.io]] competition
 
-@@html:<img align="left" height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/intermediate.png?raw=true" />@@
+*** Training Snakes
+
+Below are some snakes which we found useful for testing our snake with:
+
+- xtagon/Nagini
+- jonknoll/Siamese Fighting Snake
+- MarkZsombor/Ouroboros
+- koryk/furd
+- tbgiles/FeistySnake
+- gsnake3/Schneider
+
+*** Notable Moments
+
+"Is that a Young Thug reference? You guys are awesome."
+
+"Im just a white guy at a coding convention talking about
+Young Thug, don't mind me!"
+
+"Ohhh, /you're/ woofers. Your emojis are breaking my logs!"
+
+@@html:<img align="left" height="120" width="120" src="screenshots/advanced.png" />@@
