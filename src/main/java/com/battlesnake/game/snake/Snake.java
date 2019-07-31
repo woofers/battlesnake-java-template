@@ -13,12 +13,6 @@ import com.battlesnake.game.math.Point;
 @Log4j2
 @Accessors(fluent = true)
 public class Snake {
-    private static enum Mode {
-        ATTACK_STATE,
-        HUNGRY_STATE
-    }
-
-    private static final int HUNGER_ZONE = 50;
     private static final int MAX_HEALTH = 100;
     private static final int MIN_HEALTH = 0;
 
@@ -68,45 +62,17 @@ public class Snake {
         return longerThan(snake.length());
     }
 
-    public Mode mode(Board board) {
-        if (health() <= HUNGER_ZONE) {
-            return Mode.HUNGRY_STATE;
-        }
-        else if (length() > board.longestSnakeLength()) {
-            return Mode.ATTACK_STATE;
-        }
-        return Mode.HUNGRY_STATE;
-    }
-
     public Move move(Board board) {
-        Move move = null;
-        Mode mode = mode(board);
-        log.info("State {}", mode);
-        switch (mode) {
-            case HUNGRY_STATE:
-                move = board.goToFood(head());
-                if (move == null) {
-                    move = board.goToAttack(head());
-                }
-                if (move == null) {
-                    move = board.goToTail(head());
-                }
-                break;
-            case ATTACK_STATE:
-                move = board.goToAttack(head());
-                if (move == null) {
-                    move = board.goToFood(head());
-                }
-                if (move == null) {
-                    move = board.goToTail(head());
-                }
-                break;
+        // Move to right by default
+        Move move = Move.RIGHT;
+        // Get all possible safe moves
+        List<Move> moves = board.getPossibleMoves(head());
+        // If not safe moves exist. try to find any possible move
+        if (moves.isEmpty()) {
+            moves = board.getPossibleDangerousMoves(head());
         }
-        if (move == null) {
-            move = board.goToFallback(head());
-        }
-        board.print();
-        log.info("(Region {})", board.toRegionString());
+        // If some move exists, take it
+        if (!moves.isEmpty()) move = moves.get(0);
         log.info("Moving {}", move);
         return move;
     }
