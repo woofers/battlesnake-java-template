@@ -1,58 +1,68 @@
 
 # Table of Contents
 
--   [Battlesnake Template](#org7a845bc)
-    -   [About](#org3ada019)
-    -   [Usage](#orgde93732)
-        -   [Prerequisites](#org37b2efb)
-        -   [Test Board](#orgdb070fe)
-        -   [Run Locally](#org52bee51)
-        -   [Deployment](#org8fd235d)
-    -   [Acknowledgments](#orge9015a3)
+-   [Battlesnake Template](#org0f72bd7)
+    -   [About](#org037056d)
+    -   [Usage](#org13dbb15)
+        -   [Prerequisites](#orgc3d5570)
+        -   [Test Board](#orgfcf9300)
+        -   [Run Locally](#org6e620be)
+        -   [Deployment](#orgc3f22c5)
+    -   [Acknowledgments](#org0f4301b)
 
 
 
-<a id="org7a845bc"></a>
+<a id="org0f72bd7"></a>
 
 # Battlesnake Template
 
 <img height="120" width="120" src="screenshots/advanced.png" />
 
-A simple [Battlesnake](https://www.battlesnake.io) template written in Java.
+A un-official [Battlesnake](https://www.battlesnake.io) template written in Java.
 
-Battlesnake documentation can be found at <https://docs.battlesnake.io>.
+Battlesnake documentation can be found at [docs.battlesnake.io](https://docs.battlesnake.io).
 
 [![img](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 
-<a id="org3ada019"></a>
+<a id="org037056d"></a>
 
 ## About
 
-This template is different than the official java 
-[Battlesnake.io Template](https://github.com/battlesnakeio/starter-snake-java)
-due to a more object-orientated approach, as well as being more type safe.
+This template is different from the official Java [Battlesnake.io Template](https://github.com/battlesnakeio/starter-snake-java) in a few ways:
+
+-   GSON is used for JSON serialization rather than Jackson
+-   Pure Java Servlets are used rather than the Spark Framework
+-   Tomcat is used as the servlet container rather than Jetty which is used by default by Spark
+-   Gradle is used as the build tool rather than Maven
+
+The official Java [Template](https://github.com/battlesnakeio/starter-snake-java) is also simpler and smaller
+however this template comes out-of-the-box with the following additional features:
+
+-   Logging support using Log4j2
+-   Logs server response time
+-   Code formatting, removing used imports using spotless
 
 
-<a id="orgde93732"></a>
+<a id="org13dbb15"></a>
 
 ## Usage
 
 
-<a id="org37b2efb"></a>
+<a id="orgc3d5570"></a>
 
 ### Prerequisites
 
 1.  Install JDK 11 or higher
-2.  Install Docker + Docker compose (required for [Docker container method](#org3ff4c85))
-3.  Install Heroku CLI (required for [Heroku CLI method](#org08feee7))
-4.  Install .war Heroku deployment plug-in `heroku plugins:install heroku-cli-deploy` ) (required for [Heroku CLI method](#org08feee7))
+2.  Install Docker + Docker compose (required for [Docker container method](#org6458b36))
+3.  Install Heroku CLI (required for [Heroku CLI method](#orgb98a84b))
+4.  Install .war Heroku deployment plug-in `heroku plugins:install heroku-cli-deploy` ) (required for [Heroku CLI method](#orgb98a84b))
 5.  Create a Heroku App online or using the Heroku CLI with `heroku create <name>`
 
     (alternatively any other hosting service can be used)
 
 
-<a id="orgdb070fe"></a>
+<a id="orgfcf9300"></a>
 
 ### Test Board
 
@@ -61,7 +71,7 @@ due to a more object-orientated approach, as well as being more type safe.
 Goto [play.battlesnake.io](https://play.battlesnake.io)
 
 
-<a id="org52bee51"></a>
+<a id="org6e620be"></a>
 
 ### Run Locally
 
@@ -71,14 +81,14 @@ Goto [play.battlesnake.io](https://play.battlesnake.io)
 2.  Use `http://localhost:8080` as the snake URL.
 
 **Docker**
-<a id="org3ff4c85"></a>
+<a id="org6458b36"></a>
 
 1.  Build the project using either `./gradle build` or `gradlew build` for UNIX and Windows platforms respectively.
 2.  Run the Docker Tomcat image in a container with `docker-compose up`.
 3.  Use `http://localhost:8080/battlesnake` as the snake URL.
 
 
-<a id="org8fd235d"></a>
+<a id="orgc3f22c5"></a>
 
 ### Deployment
 
@@ -90,14 +100,14 @@ Goto [play.battlesnake.io](https://play.battlesnake.io)
 4.  Enter the repository name and click `Connect`.
 
 **Heroku CLI**
-<a id="org08feee7"></a>
+<a id="orgb98a84b"></a>
 
 1.  Build .war file `./gradlew build`
 2.  Deploy to Heroku `heroku war:deploy build/libs/battlesnake.war --app <name>`
 3.  Use `https://[name].herokuapp.com/` as the snake URL.
 
 
-<a id="orge9015a3"></a>
+<a id="org0f4301b"></a>
 
 ## Acknowledgments
 

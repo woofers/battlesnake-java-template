@@ -8,19 +8,27 @@
 
 @@html:<img height="120" width="120" src="screenshots/advanced.png" />@@
 
-A simple [[https://www.battlesnake.io][Battlesnake]] template written in Java.
+A un-official [[https://www.battlesnake.io][Battlesnake]] template written in Java.
 
-Battlesnake documentation can be found at https://docs.battlesnake.io.
+Battlesnake documentation can be found at [[https://docs.battlesnake.io][docs.battlesnake.io]].
 
 [[https://heroku.com/deploy][https://www.herokucdn.com/deploy/button.png]]
 
 ** About
 
+This template is different from the official Java [[https://github.com/battlesnakeio/starter-snake-java][Battlesnake.io Template]] in a few ways:
 
-This template is different than the official java 
-[[https://github.com/battlesnakeio/starter-snake-java][Battlesnake.io Template]]]
-due to a more object-orientated approach, as well as being more type safe.
+- GSON is used for JSON serialization rather than Jackson
+- Pure Java Servlets are used rather than the Spark Framework
+- Tomcat is used as the servlet container rather than Jetty which is used by default by Spark
+- Gradle is used as the build tool rather than Maven
 
+The official Java [[https://github.com/battlesnakeio/starter-snake-java][Template]] is also simpler and smaller
+however this template comes out-of-the-box with the following additional features:
+
+- Logging support using Log4j2
+- Logs server response time
+- Code formatting, removing used imports using spotless
 
 ** Usage
 *** Prerequisites
